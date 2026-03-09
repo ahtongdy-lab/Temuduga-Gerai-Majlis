@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Semakan Keputusan Temuduga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+<div class="logo-area">
+<img src="logo-mds.png" class="logo">
+<div class="title">
+PORTAL SEMAKAN KEPUTUSAN TEMUDUGA<br>
+<span>Majlis Daerah Simunjan</span>
+</div>
+</div>
+</header>
+
+<div class="main">
+<div class="card">
+<h2>Semakan Status Permohonan</h2>
+<p>Sila masukkan No Kad Pengenalan</p>
+
+<input type="text" id="ic" placeholder="Contoh: 900101-13-1234" onkeyup="formatIC(this)">
+<br>
+<button onclick="semak()">SEMAK</button>
+
+<div id="icError"></div>
+<div id="loading">Sedang menyemak...</div>
+<div id="result"></div>
+
+</div>
+</div>
+
+<footer>Hakcipta © Majlis Daerah Simunjan</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

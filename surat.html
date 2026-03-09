@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Surat Tawaran</title>
+<style>
+body{font-family:Arial;padding:60px;}
+h2{text-align:center;}
+</style>
+</head>
+<body>
+
+<h2>SURAT TAWARAN TEMUDUGA</h2>
+
+<p>Dengan ini dimaklumkan bahawa:</p>
+
+<p><b id="nama"></b></p>
+
+<p>No IC: <span id="ic"></span></p>
+
+<p>Adalah <b>BERJAYA</b> dalam sesi temuduga.</p>
+
+<p>Sila hadir ke pejabat Majlis Daerah Simunjan untuk urusan lanjut.</p>
+
+<div id="qrcode"></div>
+
+<br>
+
+<button onclick="window.print()">Cetak</button>
+
+<script src="qrcode.min.js"></script>
+
+<script>
+let nama=localStorage.getItem("nama");
+let ic=localStorage.getItem("ic");
+
+document.getElementById("nama").innerText=nama;
+document.getElementById("ic").innerText=ic;
+
+// QR code generation (requires real qrcode library)
+if(typeof QRCode !== "undefined"){
+new QRCode(document.getElementById("qrcode"),{
+text:nama+" "+ic,
+width:120,
+height:120
+});
+}else{
+document.getElementById("qrcode").innerText="QR library belum dimasukkan.";
+}
+</script>
+
+</body>
+</html>
