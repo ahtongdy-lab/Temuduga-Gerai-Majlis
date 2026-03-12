@@ -76,6 +76,9 @@ document.getElementById("result").innerHTML="Rekod tidak dijumpai";
 
 }
 
+// kosongkan search bar
+document.getElementById("ic").value="";
+
 },1000);
 
 }
