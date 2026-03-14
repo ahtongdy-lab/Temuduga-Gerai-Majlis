@@ -29,6 +29,14 @@ font-weight:bold;
 font-size:14px;
 }
 
+body{
+background-image: url('background_masakan.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
 .main{
 display:flex;
 justify-content:center;
