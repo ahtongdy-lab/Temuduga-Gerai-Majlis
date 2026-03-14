@@ -1,51 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 <head>
-<title>Surat Tawaran</title>
+<meta charset="UTF-8">
+<title>Surat Tawaran Sewaan Gerai</title>
+
 <style>
-body{font-family:Arial;padding:60px;}
-h2{text-align:center;}
+
+body{
+font-family: "Times New Roman", serif;
+margin:60px;
+color:#000;
+}
+
+.header{
+text-align:center;
+border-bottom:2px solid #000;
+padding-bottom:10px;
+margin-bottom:30px;
+}
+
+.logo{
+width:90px;
+margin-bottom:5px;
+}
+
+.header h2{
+margin:5px;
+font-size:20px;
+letter-spacing:1px;
+}
+
+.header p{
+margin:2px;
+font-size:14px;
+}
+
+.title{
+text-align:center;
+font-weight:bold;
+font-size:18px;
+margin:30px 0;
+text-decoration:underline;
+}
+
+.content{
+font-size:16px;
+line-height:1.6;
+}
+
+.recipient{
+margin:20px 0;
+}
+
+.qr{
+margin-top:30px;
+}
+
+.signature{
+margin-top:80px;
+width:300px;
+}
+
+button{
+margin-top:40px;
+padding:10px 25px;
+font-size:16px;
+cursor:pointer;
+}
+
+@media print{
+button{
+display:none;
+}
+
+body{
+margin:40px;
+}
+}
+
 </style>
 </head>
+
 <body>
 
-<h2>SURAT TAWARAN SEWAAN GERAI MAJLIS DAERAH SIMUNJAN</h2>
+<div class="header">
 
-<p>Dengan ini dimaklumkan bahawa:</p>
+<img src="img/logo-mds.png" class="logo">
 
-<p><b id="nama"></b></p>
+<h2>MAJLIS DAERAH SIMUNJAN</h2>
+<p>94800 Simunjan</p>
+<p>Sarawak, Malaysia</p>
 
-<p>No IC: <span id="ic"></span></p>
+</div>
 
-<p>Adalah <b>BERJAYA</b> dalam sesi temuduga yang telah diadakan tempoh.</p>
 
-<p>Sila hadir ke pejabat Majlis Daerah Simunjan untuk urusan selanjutnya.</p>
+<div class="title">
+SURAT TAWARAN SEWAAN GERAI
+</div>
 
+
+<div class="content">
+
+<p>Dengan hormatnya perkara di atas adalah dirujuk.</p>
+
+<p>Dengan ini dimaklumkan bahawa pemohon berikut:</p>
+
+<div class="recipient">
+
+<p><b>Nama :</b> <span id="nama"></span></p>
+
+<p><b>No. Kad Pengenalan :</b> <span id="ic"></span></p>
+
+</div>
+
+<p>
+Adalah dengan ini <b>BERJAYA</b> dalam sesi temuduga sewaan gerai yang telah diadakan oleh
+Majlis Daerah Simunjan.
+</p>
+
+<p>
+Sehubungan itu, pihak tuan/puan diminta hadir ke Pejabat
+<b>Majlis Daerah Simunjan</b> bagi tujuan pengesahan dan urusan
+selanjutnya.
+</p>
+
+<p>
+Segala kerjasama daripada pihak tuan/puan amat dihargai.
+</p>
+
+<p>Sekian, terima kasih.</p>
+
+<p><b>"BERKHIDMAT UNTUK NEGARA"</b></p>
+
+
+<div class="qr">
 <div id="qrcode"></div>
+</div>
 
-<br>
 
-<button onclick="window.print()">Cetak</button>
+<div class="signature">
+
+<p>Yang menjalankan tugas,</p>
+
+<br><br><br>
+
+<p>....................................................</p>
+<p><b>Setiausaha</b></p>
+<p>Majlis Daerah Simunjan</p>
+
+</div>
+
+
+<button onclick="window.print()">Cetak / Simpan PDF</button>
+
+</div>
+
 
 <script src="qrcode.min.js"></script>
 
 <script>
-let nama=localStorage.getItem("nama");
-let ic=localStorage.getItem("ic");
 
-document.getElementById("nama").innerText=nama;
-document.getElementById("ic").innerText=ic;
+let nama = localStorage.getItem("nama");
+let ic = localStorage.getItem("ic");
 
-// QR code generation (requires real qrcode library)
+document.getElementById("nama").innerText = nama;
+document.getElementById("ic").innerText = ic;
+
+
 if(typeof QRCode !== "undefined"){
+
 new QRCode(document.getElementById("qrcode"),{
-text:nama+" "+ic,
+text: nama + " " + ic,
 width:120,
 height:120
 });
+
 }else{
+
 document.getElementById("qrcode").innerText="QR library belum dimasukkan.";
+
 }
+
 </script>
 
 </body>
