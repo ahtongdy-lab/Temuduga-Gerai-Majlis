@@ -6,46 +6,57 @@
 
 <style>
 
+@page{
+size:A4;
+margin:25mm;
+}
+
 body{
-font-family: "Times New Roman", serif;
-margin:60px;
+font-family:"Times New Roman", serif;
 color:#000;
+margin:0;
+}
+
+.container{
+width:100%;
+max-width:800px;
+margin:auto;
 }
 
 .header{
 text-align:center;
 border-bottom:2px solid #000;
 padding-bottom:10px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .logo{
-width:90px;
+width:80px;
 margin-bottom:5px;
 }
 
 .header h2{
-margin:5px;
+margin:3px;
 font-size:20px;
 letter-spacing:1px;
 }
 
 .header p{
-margin:2px;
-font-size:14px;
+margin:0;
+font-size:13px;
 }
 
 .title{
 text-align:center;
-font-weight:bold;
 font-size:18px;
-margin:30px 0;
+font-weight:bold;
 text-decoration:underline;
+margin:25px 0;
 }
 
 .content{
 font-size:16px;
-line-height:1.6;
+line-height:1.7;
 }
 
 .recipient{
@@ -53,29 +64,37 @@ margin:20px 0;
 }
 
 .qr{
-margin-top:30px;
+margin-top:25px;
 }
 
-.signature{
-margin-top:80px;
-width:300px;
+.footer-note{
+margin-top:60px;
+font-size:14px;
+text-align:center;
+font-style:italic;
 }
 
 button{
-margin-top:40px;
+margin-top:30px;
 padding:10px 25px;
-font-size:16px;
+font-size:15px;
 cursor:pointer;
 }
 
 @media print{
+
 button{
 display:none;
 }
 
 body{
-margin:40px;
+margin:0;
 }
+
+.container{
+width:100%;
+}
+
 }
 
 </style>
@@ -83,9 +102,11 @@ margin:40px;
 
 <body>
 
+<div class="container">
+
 <div class="header">
 
-<img src="logo_mds.png" class="logo">
+<img src="img/logo-mds.png" class="logo">
 
 <h2>MAJLIS DAERAH SIMUNJAN</h2>
 <p>94800 Simunjan</p>
@@ -114,23 +135,28 @@ SURAT TAWARAN SEWAAN GERAI
 </div>
 
 <p>
-Adalah dengan ini <b>BERJAYA</b> dalam sesi temuduga sewaan gerai yang telah diadakan oleh
-Majlis Daerah Simunjan.
+Adalah dengan ini <b>BERJAYA</b> dalam sesi temuduga sewaan gerai yang telah
+diadakan oleh <b>Majlis Daerah Simunjan</b>.
 </p>
 
 <p>
 Sehubungan itu, pihak tuan/puan diminta hadir ke Pejabat
-<b>Majlis Daerah Simunjan</b> bagi tujuan pengesahan dan urusan
+Majlis Daerah Simunjan bagi tujuan pengesahan dan urusan
 selanjutnya.
-</p>
-
-<p>
-Segala kerjasama daripada pihak tuan/puan amat dihargai.
 </p>
 
 <p>Sekian, terima kasih.</p>
 
-<p><b>"BERKHIDMAT UNTUK NEGARA"</b></p>
+<p><b>"AN HONOUR TO SERVE"</b></p>
+  
+<p>Yang menjalankan tugas,</p>
+
+<br><br><br>
+
+  
+<p><b>Setiausaha</b></p>
+<p>Majlis Daerah Simunjan</p>
+
 
 
 <div class="qr">
@@ -138,20 +164,14 @@ Segala kerjasama daripada pihak tuan/puan amat dihargai.
 </div>
 
 
-<div class="signature">
-
-<p>Yang menjalankan tugas,</p>
-
-<br><br><br>
-
-<p>....................................................</p>
-<p><b>Setiausaha</b></p>
-<p>Majlis Daerah Simunjan</p>
-
+<div class="footer-note">
+Surat ini adalah cetakan komputer, tandatangan tidak diperlukan. Terima Kasih.
 </div>
 
 
 <button onclick="window.print()">Cetak / Simpan PDF</button>
+
+</div>
 
 </div>
 
@@ -170,9 +190,9 @@ document.getElementById("ic").innerText = ic;
 if(typeof QRCode !== "undefined"){
 
 new QRCode(document.getElementById("qrcode"),{
-text: nama + " " + ic,
-width:120,
-height:120
+text:nama+" "+ic,
+width:110,
+height:110
 });
 
 }else{
