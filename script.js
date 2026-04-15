@@ -66,7 +66,7 @@ document.getElementById("result").innerHTML=
 `<p><b>Nama:</b> ${calon.nama}</p>
 <p><b>No IC:</b> ${icMasked}</p>
 <div class="badge ${warna}">
-${berjaya?"TAHNIAH! ANDA BERJAYA":"PERMOHONAN TIDAK BERJAYA"}
+${berjaya?"TAHNIAH! ANDA BERJAYA":"KEPUTUSAN TEMUDUGA TIDAK BERJAYA"}
 </div>
 ${printBtn}`;
 
